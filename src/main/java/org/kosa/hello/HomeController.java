@@ -11,8 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 public class HomeController {
 	@GetMapping("/")
 	public String index(ServletRequest request) {
-        log.info("server port = {}", request.getServerPort());
-        return "Hello World... " + request.getServerPort();
+        log.info("server port = {} : {}", request.getLocalPort(), request.getServerPort());
+        return "변경 Hello World... " + request.getLocalPort() + " : " + request.getServerPort();
         ///dd
     }
 }
